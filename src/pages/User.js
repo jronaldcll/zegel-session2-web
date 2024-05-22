@@ -8,6 +8,8 @@ function User() {
     password: ''
   });
 
+  const [contador, setCount] = useState(10);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -68,6 +70,8 @@ function User() {
         <h1 className="form_title">Registrar usuario</h1>
       </div>
       <div className="form_body">
+        <p>Estas en el contador, y vas en el número: {contador}</p>
+        <button onClick={() => setCount(contador + 1)} >Incrementar Contador (1)</button>
         <form onSubmit={handleSubmit}>
           <div className="form">
             <label className="form_label">NOMBRES Y APELLIDOS:</label>
